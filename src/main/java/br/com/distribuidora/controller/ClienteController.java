@@ -35,6 +35,7 @@ public class ClienteController extends HttpServlet {
 		if(!id.isEmpty()) {
 			this.cliente.setId(Long.parseLong(id));
 		}
+		
 		this.cliente.setNome(nome);
 		this.cliente.setEmail(email);
 		this.cliente.setTelefone(telefone);

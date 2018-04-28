@@ -13,13 +13,12 @@
 <body>
 
 	<div class="container">
-        <div class="card card-container">
+        <div class="card card-container" >
            
             <form action="index.jsp" class="form-signin">
                 
                 <input type="text" id="usuario" class="form-control" placeholder="Usuário" required autofocus>
                 <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-                <div id="remember" class="checkbox">
                     
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
