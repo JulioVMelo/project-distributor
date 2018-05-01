@@ -32,10 +32,10 @@ public class ClienteController extends HttpServlet {
 		String endereco = request.getParameter("endereco");
 		String id = request.getParameter("id");
 		
-		if(!id.isEmpty()) {
-			this.cliente.setId(Long.parseLong(id));
-		}
-		
+//		if(!id.isEmpty()) {
+//			this.cliente.setId(Long.parseLong(id));
+//		}
+		this.cliente.setId(Long.parseLong(id));
 		this.cliente.setNome(nome);
 		this.cliente.setEmail(email);
 		this.cliente.setTelefone(telefone);

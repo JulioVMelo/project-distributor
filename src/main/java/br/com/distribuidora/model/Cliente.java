@@ -46,12 +46,6 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-//	public Cliente() {
-//		this.contato = new Contato();
-//	}
-	
-
-	
 	public Long getId() {
 		return id;
 	}
@@ -64,5 +58,10 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+//	public Cliente() {
+//	this.contato = new Contato();
+//}
+
 	
 }
