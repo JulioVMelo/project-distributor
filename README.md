@@ -1,4 +1,4 @@
-BANCO DE DADOS
+BANCO DE DADOS - distribuidora
 -
 nome: root
 -
