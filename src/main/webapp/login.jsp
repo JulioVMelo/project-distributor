@@ -15,13 +15,11 @@
 	<div class="container">
         <div class="card card-container" >
            
-            <form action="loginUsuario" class="form-signin">
+            <form action="loginUsuario" method="post" class="form-signin">
                 
-                <input type="text" id="login" class="form-control" placeholder="Login" required autofocus>
-                <input type="password" id="senha" class="form-control" placeholder="Senha" required>
-                <div id="remember" class="checkbox">
-                    
-                </div>
+                <input type="text" id="login" class="form-control" placeholder="Login">
+                <input type="password" id="senha" class="form-control" placeholder="Senha">
+                
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
             </form>
 </body>
