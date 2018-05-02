@@ -1,7 +1,5 @@
 package br.com.distribuidora.repository;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,8 +23,9 @@ public class UsuarioRepository {
 		System.out.println(autentica.getResultList());
 		manager.getTransaction().commit();
 
-		System.out.println(usuario.getLogin() +usuario.getSenha());
+		System.out.println(usuario.getLogin() + usuario.getSenha());
 		return true;
 
 	}
+
 }
