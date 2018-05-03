@@ -48,9 +48,9 @@ public class LoginController extends HttpServlet {
 			disp.forward(request, response);
 		}
 		else {
-			RequestDispatcher disp = getServletContext().getRequestDispatcher("index.jsp");
+			RequestDispatcher disp = request.getRequestDispatcher("login.jsp");
 			PrintWriter out = response.getWriter();
-			out.println("<text-align:center font color='red'>Usuário ou senha inválido</font>");
+			out.println("<font color='red'>Usuário ou senha inválido</font>");
 			disp.include(request, response);
 		}
 	}

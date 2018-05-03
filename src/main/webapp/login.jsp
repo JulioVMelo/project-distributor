@@ -17,8 +17,8 @@
            
             <form action="loginUsuario" method="post" class="form-signin">
                 
-                <input type="text" id="login" class="form-control" placeholder="Login">
-                <input type="password" id="senha" class="form-control" placeholder="Senha">
+                <input type="text" name="login" id="login" class="form-control" placeholder="Login">
+                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
                 
                 <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
             </form>

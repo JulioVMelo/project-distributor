@@ -1,5 +1,7 @@
 package br.com.distribuidora.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,16 +17,21 @@ public class UsuarioRepository {
 
 		EntityManager manager = factory.createEntityManager();
 		manager.getTransaction().begin();
-		Query autentica = manager.createQuery("FROM Usuario u WHERE u.login = ?1 AND u.senha = ?2");
-		autentica.setParameter("1", usuario.getLogin());
-		autentica.setParameter("2", usuario.getSenha());
+		Query autentica = manager.createQuery("FROM Usuario u WHERE login = ?1 AND senha = ?2");
+		autentica.setParameter(1, usuario.getLogin());
+		autentica.setParameter(2, usuario.getSenha());
 
-		autentica.getResultList();
-		System.out.println(autentica.getResultList());
+		autentica.setMaxResults(1);
+		List<Usuario> list = autentica.getResultList();
+		
 		manager.getTransaction().commit();
 
-		System.out.println(usuario.getLogin() + usuario.getSenha());
-		return true;
+		if(list.size()==1)
+			return true;
+		else
+			return false;
+		
+		
 
 	}
 
