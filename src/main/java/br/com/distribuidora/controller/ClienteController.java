@@ -44,6 +44,8 @@ public class ClienteController extends HttpServlet {
 
 		this.clienteService.salvar(cliente);
 		
+		response.sendRedirect("lista");
+		
 
 	}
 

@@ -19,8 +19,8 @@
 
 	<form action="lista" method="get">
 
-		<table class="table" style="width: 50%">
-			<tr>
+		<table class="table" style="width: 50%" align="center">
+			<tr style="background-color:gray;">
 				<th>ID</th>
 				<th>Nome</th>
 				<th>Endereço</th>
@@ -38,10 +38,10 @@
 					<td>${cliente.telefone}</td>
 					<td><a href="editaCliente?id=${cliente.id}">Editar</a> | <a
 						href="deletaCliente?id=${cliente.id}">Excluir</a></td>
-
 				</tr>
 			</c:forEach>
 		</table>
+		
 	</form>
 
 	<script src="js/jquery.js"></script>

@@ -3,7 +3,6 @@
   <display-name>distribuidora</display-name>
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -65,4 +64,13 @@
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>ListarFilter</display-name>
+    <filter-name>ListarFilter</filter-name>
+    <filter-class>br.com.distribuidora.filter.ListarFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ListarFilter</filter-name>
+    <url-pattern>/ListarFilter</url-pattern>
+  </filter-mapping>
 </web-app>

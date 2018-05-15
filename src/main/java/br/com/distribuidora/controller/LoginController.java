@@ -2,6 +2,7 @@ package br.com.distribuidora.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.Charset;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,38 +20,39 @@ import br.com.distribuidora.service.UsuarioService;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
 	private UsuarioService usuarioService = new UsuarioService();
 
 	public LoginController() {
 		this.usuarioService = new UsuarioService();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String loginUsuario = request.getParameter("login");
 		String senhaUsuario = request.getParameter("senha");
-		
+
 		Usuario usuario = new Usuario();
 		usuario.setLogin(loginUsuario);
 		usuario.setSenha(senhaUsuario);
 
-		if (this.usuarioService.autenticar(usuario)){
+		if (this.usuarioService.autenticar(usuario)) {
 			HttpSession sessao = request.getSession();
 			sessao.setAttribute("login", usuario.getLogin());
-			sessao.setMaxInactiveInterval(30*60);
+			sessao.setMaxInactiveInterval(30 * 60);
 
 			Cookie cookie = new Cookie("login", usuario.getLogin());
-			cookie.setMaxAge(30*60);
+			cookie.setMaxAge(30 * 60);
 			response.addCookie(cookie);
-			
+
 			RequestDispatcher disp = request.getRequestDispatcher("index.jsp");
 			disp.forward(request, response);
-		}
-		else {
+		} else {
+			Charset utf8 = Charset.forName("UTF-8");
+			System.out.println(utf8.newEncoder().maxBytesPerChar());
 			RequestDispatcher disp = request.getRequestDispatcher("login.jsp");
 			PrintWriter out = response.getWriter();
-			out.println("<font color='red'>Usuário ou senha inválido</font>");
+			out.println("<div align='center'><font color='red'>Usuário ou senha inválido</font></div>");
 			disp.include(request, response);
 		}
 	}
